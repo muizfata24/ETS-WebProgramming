@@ -17,7 +17,7 @@
 	padding-left: 17px;
 }
 .u-name b {
-	color: #4267b2;
+	color: #d9ff00;
 }
 .header i {
 	font-size: 30px;
@@ -86,7 +86,7 @@
 }
 .side-bar {
 	width: 250px;
-	background: #e9ebee;
+	background: #00255c;
 	min-height: 100vh;
 	transition: 500ms width;
 }
@@ -164,6 +164,8 @@
 
 .section-1 {
 	padding: 30px;
+	width: 100%;
+	background: rgb(105, 206, 253);
 }
 .section-1 .title {
     margin-bottom: 10px;
@@ -210,11 +212,6 @@
 	margin-left: 10px;
 }
 
-
-.section-1 {
-	width: 100%;
-	background: #ffe;
-}
 .section-1 .title a:hover{
 	opacity: .6;
 }
@@ -309,7 +306,7 @@
 }
 .dashboard-item {
     text-align: center;
-    background: #e9ebee;
+    background: #211c33;
     width: 200px;
     padding: 30px 5px;
     margin-bottom: 40px;

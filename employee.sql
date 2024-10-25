@@ -3,14 +3,8 @@ START TRANSACTION;
 SET time_zone = "+00:00";
 
 -- Database: `employee_DB`
---
-
--- --------------------------------------------------------
-
---
+----------------------------------------------------------
 -- Table structure for table `notifications`
---
-
 CREATE TABLE `notifications` (
   `id` int(11) NOT NULL,
   `message` text NOT NULL,
@@ -19,10 +13,6 @@ CREATE TABLE `notifications` (
   `date` date NOT NULL DEFAULT current_timestamp(),
   `is_read` tinyint(1) DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `notifications`
---
 
 INSERT INTO `notifications` (`id`, `message`, `recipient`, `type`, `date`, `is_read`) VALUES
 (1, '\'Customer Feedback Survey Analysis\' has been assigned to you. Please review and start working on it.', 7, 'New Task Assigned', '2024-09-05', 1),
@@ -43,11 +33,7 @@ INSERT INTO `notifications` (`id`, `message`, `recipient`, `type`, `date`, `is_r
 (16, '\'Renew software license\' has been assigned to you. Please review and start working on it', 2, 'New Task Assigned', '2024-09-06', 0);
 
 -- --------------------------------------------------------
-
---
 -- Table structure for table `tasks`
---
-
 CREATE TABLE `tasks` (
   `id` int(11) NOT NULL,
   `title` varchar(100) NOT NULL,
@@ -57,10 +43,6 @@ CREATE TABLE `tasks` (
   `status` enum('pending','in_progress','completed') DEFAULT 'pending',
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `tasks`
---
 
 INSERT INTO `tasks` (`id`, `title`, `description`, `assigned_to`, `due_date`, `status`, `created_at`) VALUES
 (1, 'Task 1', 'Task Description', 7, NULL, 'completed', '2024-08-29 16:47:37'),
@@ -82,11 +64,7 @@ INSERT INTO `tasks` (`id`, `title`, `description`, `assigned_to`, `due_date`, `s
 (27, 'Renew software license', 'Ensure all software licenses are renewed and up to date', 2, '2024-09-06', 'pending', '2024-09-06 08:11:28');
 
 -- --------------------------------------------------------
-
---
 -- Table structure for table `users`
---
-
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `full_name` varchar(50) NOT NULL,
@@ -95,10 +73,6 @@ CREATE TABLE `users` (
   `role` enum('admin','employee') NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `users`
---
 
 INSERT INTO `users` (`id`, `full_name`, `username`, `password`, `role`, `created_at`) VALUES
 (1, 'Oliver', 'admin', '$2y$10$TnyR1Y43m1EIWpb0MiwE8Ocm6rj0F2KojE3PobVfQDo9HYlAHY/7O', 'admin', '2024-08-28 07:10:04'),
@@ -109,31 +83,23 @@ INSERT INTO `users` (`id`, `full_name`, `username`, `password`, `role`, `created
 ALTER TABLE `notifications`
   ADD PRIMARY KEY (`id`);
 
---
 -- Indexes for table `tasks`
---
 ALTER TABLE `tasks`
   ADD PRIMARY KEY (`id`),
   ADD KEY `assigned_to` (`assigned_to`);
 
---
 -- Indexes for table `users`
---
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`);
 --
 ALTER TABLE `notifications`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
---
 -- AUTO_INCREMENT for table `tasks`
---
 ALTER TABLE `tasks`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
---
 -- AUTO_INCREMENT for table `users`
---
 ALTER TABLE `users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 

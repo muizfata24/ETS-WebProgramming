@@ -9,7 +9,7 @@
 </head>
 <body class="login-body">
       
-      <form method="POST" action="app/login.php" class="shadow p-4">
+      <form method="POST" action="app/login.php" class="shadow p-4 login-form">
 
       	  <h3 class="display-4">LOGIN</h3>
       	  <?php if (isset($_GET['error'])) {?>
@@ -23,11 +23,6 @@
 			  <?php echo stripcslashes($_GET['success']); ?>
 			</div>
       	  <?php } 
-
-                // $pass = "123";
-                // $pass = password_hash($pass, PASSWORD_DEFAULT);
-                // echo $pass;
-      
       	  ?>
   
 			

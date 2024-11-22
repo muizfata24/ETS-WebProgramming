@@ -156,6 +156,8 @@
 	justify-content: center;
 	align-items: center;
 	min-height: 100vh;
+	background: rgb(255,180,222);
+	background: linear-gradient(43deg, rgba(255,180,222,1) 9%, rgba(9,29,121,1) 35%, rgba(0,212,255,1) 100%); 
 }
 .login-body form {
 	max-width:420px;
@@ -319,4 +321,9 @@
 .dashboard-item span{
 	display: block;
     color: #fff;
+}
+
+.login-form {
+	background: white;
+	border-radius: 25px;
 }
